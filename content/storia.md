@@ -1,8 +1,5 @@
-# Dalle prime pietre
-Il Club Go FVG nasce come gruppo informale a Trieste, cresce a Gorizia, Udine e Pordenone, e oggi riunisce appassionati di tutte le età.
+# Cosa è il Go
 
-- Serate di gioco libero
-- Studio delle partite classiche
-- Incontri introduttivi per nuovi giocatori
+Il Go è un antico gioco di strategia originario della Cina, considerato una vera e propria forma d'arte.
 
-Ci trovi **ogni martedì alle 20:00** nelle nostre sedi.
+Giocato su una griglia di linee incrociate, l'obiettivo è circondare più territorio rispetto all'avversario utilizzando pietre bianche e nere. La bellezza del Go risiede nella sua semplicità di regole e nella profondità strategica: ogni mossa rappresenta una scelta creativa e complessa, che richiede un bilanciamento delicato tra attacco e difesa. Come in un'opera d'arte, ogni partita evolve in modo unico, riflettendo lo stile e la visione di chi la gioca, diventando un'espressione di pensiero ed eleganza.
