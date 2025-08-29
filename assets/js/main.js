@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }).addTo(map);
 
     const sedi = [
-      { name: 'Trieste', coords: [45.65, 13.77] },
-      { name: 'Gorizia', coords: [45.94, 13.62] },
-      { name: 'Udine', coords: [46.07, 13.24] },
-      { name: 'Pordenone', coords: [45.96, 12.66] }
+      { name: 'Trieste', coords: [45.65552397691258, 13.772499655034979] },
+      { name: 'Ronchi dei Legionari', coords: [45.8267993654288, 13.505501393483577] },
+      { name: 'Udine', coords: [46.07177052331674, 13.233339079653026] },
+      { name: 'Porcia', coords: [45.97014439503301, 12.603125549696271] }
     ];
     sedi.forEach(s => L.marker(s.coords).addTo(map).bindPopup(s.name));
   }
