@@ -1,0 +1,18 @@
+{
+  "tornei": [
+    {
+      "id": "torneo-2025-03",
+      "titolo": "Torneo di Marzo 2025",
+      "data": "2025-03-15",
+      "luogo": "Udine",
+      "url": "tornei/torneo-2025-03.html"
+    },
+    {
+      "id": "torneo-2024-12",
+      "titolo": "Torneo di Dicembre 2024",
+      "data": "2024-12-10",
+      "luogo": "Trieste",
+      "url": "#"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torneo Marzo 2025</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="../assets/img/logo.svg" class="logo" alt="">
+        <span>Torneo Marzo 2025</span>
+      </div>
+      <nav class="nav"><a href="../tornei.html" class="btn btn-ghost small">← Tornei</a></nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <section class="panel">
+      <div class="split">
+        <div>
+          <p><strong>Dove:</strong> Udine</p>
+          <p><strong>Quando:</strong> 15 Marzo 2025</p>
+          <p><strong>Regole:</strong> Giapponesi, 45' + byo-yomi 30" × 3</p>
+          <p><a class="btn btn-primary" href="https://forms.gle/tuo-form" target="_blank">Iscriviti (Google Form)</a></p>
+        </div>
+        <div class="note muted small">
+          <p><strong>Nota privacy:</strong> i dati raccolti servono unicamente per la gestione del torneo. Le email non saranno pubblicate.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Pre-iscritti</h2>
+      <div class="iscritti-grid" id="iscritti"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Club Go FVG</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/sheet-loader.js"></script>
+  <script>
+    // Sostituisci con il tuo link CSV pubblico dello Sheet
+    loadIscritti("https://docs.google.com/spreadsheets/d/e/TUO-SHEET-ID/pub?output=csv", "#iscritti");
+  </script>
+</body>
+</html>
