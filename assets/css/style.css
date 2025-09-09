@@ -410,12 +410,24 @@ body {
   display: grid;
   gap: 2rem;
 }
-
 .event-card {
-  background: #fff;
+  background: var(--surface); /* invece di bianco */
+  color: var(--text);
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.event-card h3 {
+  color: var(--text);
+}
+
+.event-meta {
+  color: var(--muted);
+}
+
+.event-content p {
+  color: var(--text);
 }
 
 .event-card img {
@@ -428,22 +440,6 @@ body {
   padding: 1.5rem;
 }
 
-.event-card h3 {
-  margin-top: 0.5rem;
-  font-size: 1.4rem;
-  color: #222;
-}
-
-.event-meta {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.event-content p {
-  margin: 0.5rem 0;
-  line-height: 1.5;
-}
 
 html {
   scroll-padding-top: 64px; /* altezza effettiva della navbar */
