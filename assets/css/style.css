@@ -404,3 +404,30 @@ body {
   margin: 1rem;
   padding: 0 0.5rem;
 }
+
+.event-card {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-card img {
+  width: 100%;
+  display: block;
+}
+
+.event-body {
+  padding: 1rem;
+}
+
+.event-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.event-content p {
+  margin: 0.5rem 0;
+}

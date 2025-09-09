@@ -1,0 +1,20 @@
+{
+  "eventi": [
+    {
+      "id": "evento-2025-09",
+      "titolo": "Festa del Go",
+      "data": "2025-09-20",
+      "luogo": "Trieste",
+      "md": "content/eventi/evento-2025-09.md",
+      "img": "content/eventi/evento-2025-09.jpg"
+    },
+    {
+      "id": "evento-2025-06",
+      "titolo": "Seminario Go",
+      "data": "2025-06-10",
+      "luogo": "Udine",
+      "md": "content/eventi/evento-2025-06.md",
+      "img": "content/eventi/evento-2025-06.jpg"
+    }
+  ]
+}
