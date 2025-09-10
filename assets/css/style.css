@@ -33,9 +33,10 @@ body {
 
 /* Header */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 50;
+  z-index: 1000;
+  width: 100%;
   background: rgba(15, 17, 21, 0.75);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #1f2530;
@@ -439,7 +440,6 @@ body {
 .event-body {
   padding: 1.5rem;
 }
-
 
 html {
   scroll-padding-top: 64px; /* altezza effettiva della navbar */
