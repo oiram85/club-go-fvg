@@ -400,47 +400,74 @@ body {
   margin-top: 1rem;
 }
 
-/* Cards mobile fix */
+/* === Eventi page fixes === */
+
 .cards {
-  margin: 1rem;
-  padding: 0 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centra le card */
+  gap: 16px; /* spazio tra le card */
+  margin: 1rem 0;
 }
 
-/* --- Eventi --- */
-.event-list {
-  display: grid;
-  gap: 2rem;
-}
-.event-card {
-  background: var(--surface); /* invece di bianco */
-  color: var(--text);
-  border-radius: 1rem;
+.card-evento {
+  flex: 1 1 300px;
+  max-width: 500px;
+  background-color: var(--surface); /* invece di #fff */
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
-.event-card h3 {
+.card-evento h3 {
+  color: var(--text); /* titolo leggibile su sfondo scuro */
+}
+
+.card-evento p {
+  color: var(--muted); /* testo leggero ma visibile */
+}
+
+/* Titoli Markdown: dimensioni più bilanciate */
+.md-content h1 {
+  font-size: 1.8rem;
+}
+.md-content h2 {
+  font-size: 1.5rem;
+}
+.md-content h3 {
+  font-size: 1.3rem;
+}
+
+/* Testo Markdown: contrasto chiaro */
+.md-content p,
+.md-content li {
   color: var(--text);
 }
 
-.event-meta {
-  color: var(--muted);
+/* Lista card eventi: centrata e responsive */
+.list-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.event-content p {
-  color: var(--text);
+/* Navbar fallback per mobile */
+.nav.open .nav-links {
+  display: flex; /* confermiamo che sia visibile quando aperta */
 }
 
-.event-card img {
-  width: 100%;
-  display: block;
-  height: auto;
+/* Override margini hero/eventi */
+.hero,
+.content {
+  padding-top: 6rem; /* lascia spazio navbar fixed */
 }
 
-.event-body {
-  padding: 1.5rem;
-}
-
-html {
-  scroll-padding-top: 64px; /* altezza effettiva della navbar */
+/* Mappa sotto navbar */
+.map {
+  position: relative;
+  z-index: 0;
 }

@@ -1,50 +1,39 @@
-async function loadEventi() {
-  try {
-    const res = await fetch("content/events.json");
-    if (!res.ok) throw new Error("Errore nel caricamento di events.json");
-    const data = await res.json();
-    const now = new Date();
-    const prossimi = [],
-      passati = [];
+const eventiProssimi = document.getElementById("eventi-prossimi");
+const eventiPassati = document.getElementById("eventi-passati");
 
-    for (const e of data.eventi) {
-      const d = new Date(e.data + "T00:00:00");
+// Funzione per creare la card
+function creaCard(titolo, testo, imgSrc) {
+  const card = document.createElement("div");
+  card.className = "card-evento";
+  card.innerHTML = `
+    <img src="${imgSrc}" alt="${titolo}">
+    <h3>${titolo}</h3>
+    <p>${testo}</p>
+  `;
+  return card;
+}
 
-      // carica markdown
-      const mdRes = await fetch(e.md);
-      const mdText = await mdRes.text();
-      const htmlText = marked.parse(mdText);
+// Funzione per caricare il markdown
+async function caricaEventi() {
+  const response = await fetch("./content/events.json");
+  const eventi = await response.json();
 
-      const cardHTML = `
-          <article class="t-card">
-            <img src="${e.img}" alt="${e.titolo}">
-            <div class="event-body">
-              <h3>${e.titolo}</h3>
-              <p class="event-meta">📅 ${d.toLocaleDateString("it-IT")} — 📍 ${
-        e.luogo
-      }</p>
-              <div class="event-content">${htmlText}</div>
-            </div>
-          </article>
-        `;
+  for (const evento of eventi.prossimi) {
+    const mdResp = await fetch(evento.md);
+    let testo = await mdResp.text();
+    // Trasforma h1 in h3
+    testo = testo.replace(/^# (.*)$/gm, "### $1");
+    const html = marked.parse(testo);
+    eventiProssimi.appendChild(creaCard(evento.titolo, html, evento.img));
+  }
 
-      if (d >= now) prossimi.push({ date: d, html: cardHTML });
-      else passati.push({ date: d, html: cardHTML });
-    }
-
-    prossimi.sort((a, b) => a.date - b.date);
-    passati.sort((a, b) => b.date - a.date);
-
-    document.getElementById("eventi-prossimi").innerHTML =
-      prossimi.map((e) => e.html).join("") || "<p>Nessun evento futuro.</p>";
-
-    document.getElementById("eventi-passati").innerHTML =
-      passati.map((e) => e.html).join("") || "<p>Nessun evento passato.</p>";
-  } catch (err) {
-    console.error("Errore:", err);
-    document.querySelector("main").innerHTML =
-      "<p>Errore nel caricamento degli eventi.</p>";
+  for (const evento of eventi.passati) {
+    const mdResp = await fetch(evento.md);
+    let testo = await mdResp.text();
+    testo = testo.replace(/^# (.*)$/gm, "### $1");
+    const html = marked.parse(testo);
+    eventiPassati.appendChild(creaCard(evento.titolo, html, evento.img));
   }
 }
 
-document.addEventListener("DOMContentLoaded", loadEventi);
+caricaEventi();

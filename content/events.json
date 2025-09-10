@@ -1,20 +1,42 @@
 {
-  "eventi": [
+  "prossimi": [
     {
       "id": "evento-2025-09",
-      "titolo": "Festa del Go",
+      "titolo": "Torneo Estivo 2025",
       "data": "2025-09-20",
-      "luogo": "Trieste",
-      "md": "content/eventi/evento-2025-09.md",
-      "img": "content/eventi/evento-2025-09.jpg"
+      "luogo": "Palazzetto dello Sport, Trieste",
+      "descrizione": "Sfida estiva aperta a tutti i membri del Club Go FVG.",
+      "img": "./asset/img/torneo-estivo-2025.jpg",
+      "md": "./content/eventi/evento-2025-09.md"
     },
     {
+      "id": "evento-2025-10",
+      "titolo": "Workshop Strategico",
+      "data": "2025-10-05",
+      "luogo": "Sala Riunioni, Udine",
+      "descrizione": "Laboratorio pratico per migliorare la tattica di gioco.",
+      "img": "./asset/img/workshop-strategico.jpg",
+      "md": "./content/eventi/evento-2025-10.html"
+    }
+  ],
+  "passati": [
+    {
       "id": "evento-2025-06",
-      "titolo": "Seminario Go",
-      "data": "2025-06-10",
-      "luogo": "Udine",
-      "md": "content/eventi/evento-2025-06.md",
-      "img": "content/eventi/evento-2025-06.jpg"
+      "titolo": "Campionato Primavera 2025",
+      "data": "2025-06-12",
+      "luogo": "Campo Centrale, Pordenone",
+      "descrizione": "Competizione primaverile conclusa con successo.",
+      "img": "./asset/img/campionato-primavera-2025.jpg",
+      "md": "./content/eventi/evento-2025-06.html"
+    },
+    {
+      "id": "evento-2025-07",
+      "titolo": "Festa Estiva Club",
+      "data": "2025-07-18",
+      "luogo": "Parco Comunale, Gorizia",
+      "descrizione": "Evento ricreativo estivo per tutti i membri.",
+      "img": "./asset/img/festa-estiva-2025.jpg",
+      "md": "./content/eventi/evento-2025-07.html"
     }
   ]
 }
