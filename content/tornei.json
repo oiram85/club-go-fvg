@@ -8,16 +8,30 @@
       "url": "tornei/torneo-2025-11.html"
     },
     {
-      "id": "torneo-2025-03",
-      "titolo": "Torneo di Marzo 2025",
-      "data": "2025-03-15",
-      "luogo": "Udine",
-      "url": "tornei/torneo-2025-03.html"
+      "id": "torneo-2025-09",
+      "titolo": "2nd Trieste Summer Go Tournament",
+      "data": "2025-09-07",
+      "luogo": "Trieste - Magazzino 26",
+      "url": ""
     },
     {
-      "id": "torneo-2024-12",
-      "titolo": "Torneo di Dicembre 2024",
-      "data": "2024-12-10",
+      "id": "torneo-2025-30",
+      "titolo": "Torneo Goriziano 2025",
+      "data": "2025-03-30",
+      "luogo": "Ronchi dei Legionari",
+      "url": "#"
+    },
+    {
+      "id": "torneo-2025-03",
+      "titolo": "Torneo di Marzo 2024",
+      "data": "2025-03-02",
+      "luogo": "Trieste",
+      "url": "#"
+    },
+    {
+      "id": "torneo-2024-09",
+      "titolo": "Torneo di Settembre 2024",
+      "data": "2024-09-08",
       "luogo": "Trieste",
       "url": "#"
     }
