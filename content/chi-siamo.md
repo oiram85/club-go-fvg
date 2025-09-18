@@ -1,5 +1,6 @@
 # Chi siamo
-Il Club Higashikita nasce a Trieste nel 2004 grazie agli sforzi del fondatore Davide Bertok e dell'aiuto di Sandro Poldrugo. Nonostante le difficoltà di portare un gioco così complesso e lontano dalla cultura italiana, Higashikita è uno dei gruppi più longevi d'Italia.
+
+Higashikita nasce nel 2004 su iniziativa di Davide Bertok, Sandro Poldrugo e Stefano Artesi di Trieste, Mirtha Barbetti di Cormons, Paolo Driussi di Udine e Ivo Clarini e Marco Gotti di Ragogna, con l'obiettivo era di giocare con un numero di giocatori più ampio di quello della propria città.
 
 Oggi, l'Higashikita rappresenta l'espressività del gioco del Go in Friuli Venezia Giulia, articolandosi in quattro sezioni, una per ogni provincia della regione. In particolare, le sezioni di Trieste e Gorizia contribuiscono in modo significativo alla promozione e alla diffusione di questa antica arte.
 
