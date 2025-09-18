@@ -250,8 +250,10 @@ body {
 /* Tournaments list */
 .list-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center; /* mantiene le card centrate */
+  padding: 1rem 0;
 }
 .t-card {
   background: #121720;
@@ -447,13 +449,13 @@ body {
   color: var(--text);
 }
 
-/* Lista card eventi: centrata e responsive */
+/* Lista card eventi: centrata e responsive 
 .list-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
-}
+}*/
 
 /* Navbar fallback per mobile */
 .nav.open .nav-links {
