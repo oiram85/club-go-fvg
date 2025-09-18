@@ -1,6 +1,6 @@
 # Chi siamo
 
-Higashikita nasce nel 2004 su iniziativa di Davide Bertok, Sandro Poldrugo e Stefano Artesi di Trieste, Mirtha Barbetti di Cormons, Paolo Driussi di Udine e Ivo Clarini e Marco Gotti di Ragogna, con l'obiettivo era di giocare con un numero di giocatori più ampio di quello della propria città.
+Higashikita nasce nel 2004 su iniziativa di Davide Bertok, Sandro Poldrugo e Stefano Artesi di Trieste, Mirtha Barbetti di Cormons, Paolo Driussi di Udine e Ivo Clarini e Marco Gotti di Ragogna, con l'obiettivo di giocare con un numero di giocatori più ampio di quello della propria città.
 
 Oggi, l'Higashikita rappresenta l'espressività del gioco del Go in Friuli Venezia Giulia, articolandosi in quattro sezioni, una per ogni provincia della regione. In particolare, le sezioni di Trieste e Gorizia contribuiscono in modo significativo alla promozione e alla diffusione di questa antica arte.
 
