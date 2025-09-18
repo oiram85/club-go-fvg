@@ -11,29 +11,29 @@
       "id": "torneo-2025-09",
       "titolo": "2nd Trieste Summer Go Tournament",
       "data": "2025-09-07",
-      "luogo": "Trieste - Magazzino 26",
-      "url": ""
+      "luogo": "Trieste",
+      "url": "https://www.europeangodatabase.eu/EGD/Tournament_Card.php?&key=T250907A"
     },
     {
       "id": "torneo-2025-30",
       "titolo": "Torneo Goriziano 2025",
       "data": "2025-03-30",
       "luogo": "Ronchi dei Legionari",
-      "url": "#"
+      "url": "https://www.europeangodatabase.eu/EGD/Tournament_Card.php?&key=T250330A"
     },
     {
       "id": "torneo-2025-03",
-      "titolo": "Torneo di Marzo 2024",
+      "titolo": "Torneo di Trieste 2025",
       "data": "2025-03-02",
       "luogo": "Trieste",
-      "url": "#"
+      "url": "https://www.europeangodatabase.eu/EGD/Tournament_Card.php?&key=T250302A"
     },
     {
-      "id": "torneo-2024-09",
-      "titolo": "Torneo di Settembre 2024",
-      "data": "2024-09-08",
-      "luogo": "Trieste",
-      "url": "#"
+      "id": "torneo-2024-12",
+      "titolo": "13th Udine Tournament",
+      "data": "2024-12-15",
+      "luogo": "Udine",
+      "url": "https://www.europeangodatabase.eu/EGD/Tournament_Card.php?&key=T241215A"
     }
   ]
 }
