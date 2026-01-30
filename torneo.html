@@ -20,7 +20,7 @@
         if (fileName) {
             // Usiamo un percorso relativo che parte dalla root
             // Assicurati che il file md sia dentro la cartella /tornei/
-            fetch(`./tornei/${fileName}.md`)
+            fetch(`../tornei/${fileName}.md`)
                 .then(response => {
                     if (!response.ok) throw new Error("File non trovato");
                     return response.text();
