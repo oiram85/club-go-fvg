@@ -287,7 +287,55 @@ body {
   margin-top: 0.5rem;
 }
 
-/* Pre-iscritti grid */
+/* Tabella desktop */
+.iscritti-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.iscritti-table th,
+.iscritti-table td {
+  border: 1px solid #1f2530;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.iscritti-table th {
+  background: var(--surface);
+  color: var(--accent);
+}
+.iscritti-table tr:nth-child(even) {
+  background: #121720;
+}
+
+/* Cards mobile */
+.iscritti-cards {
+  display: none;
+  margin-top: 1rem;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.iscritto-card {
+  background: #121720;
+  border: 1px solid #1f2530;
+  border-radius: 12px;
+  padding: 12px;
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+/* responsive switch */
+@media (max-width: 700px) {
+  .iscritti-table {
+    display: none;
+  }
+  .iscritti-cards {
+    display: flex;
+  }
+}
+
+/*
+
+/* Pre-iscritti grid 
 .iscritti-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -301,7 +349,7 @@ body {
 }
 .iscritto h4 {
   margin: 0 0 4px 0;
-}
+}*/
 .badge-rank {
   display: inline-block;
   border-radius: 8px;
@@ -472,4 +520,36 @@ body {
 .map {
   position: relative;
   z-index: 0;
+}
+
+/* Rende le card delle risorse uniformi */
+.list-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.r-card {
+  background: #121720;
+  border: 1px solid #1e2533;
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px; /* tutte alte uguali */
+}
+
+.r-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.r-card p {
+  flex-grow: 1; /* occupa lo spazio centrale */
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+}
+
+.r-card a {
+  margin-top: auto; /* tiene il bottone sempre allineato in basso */
 }

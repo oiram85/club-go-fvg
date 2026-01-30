@@ -1,11 +1,19 @@
 {
-  "tornei": [
+    "tornei": [
+	{
+      "id": "torneo-2025-12",
+      "titolo": "14° Torneo di Udine",
+      "data": "2025-12-21",
+      "luogo": "Udine",
+      "url": "tornei/torneo-2025-12.html"
+    },
+
     {
       "id": "torneo-2025-11",
-      "titolo": "Trieste Fall Tournament",
+      "titolo": "XIV Trofeo Higashikita - 8a tappa FIGG 2025",
       "data": "2025-11-08",
       "luogo": "Trieste",
-      "url": "#"
+      "url": "tornei/torneo-2025-11.html"
     },
     {
       "id": "torneo-2025-09",
