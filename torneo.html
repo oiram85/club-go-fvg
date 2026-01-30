@@ -23,6 +23,47 @@
     <div id="content" style="max-width: 800px; margin: 50px auto; padding: 20px;">
         Caricamento in corso...
     </div>
+    <p>
+              <a
+                class="btn btn-primary"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfOYqsyAC21GwqDR0fo_cdeFjIxt1JLdDUR_MUKD2H-2UwfeA/viewform?usp=publish-editor"
+                target="_blank"
+                >Iscriviti / Register</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Pre-iscritti</h2>
+        <div class="iscritti-grid" id="iscritti"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2025 Club Go FVG</p>
+
+
+        <div class="social">
+          <a
+            href="https://www.facebook.com/groups/612754198805804/"
+            target="_blank"
+            aria-label="Facebook"
+            ><img src="../assets/img/facebook.svg" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/sheet-loader.js"></script>
+    <script>
+      // Sostituisci con il tuo link CSV pubblico dello Sheet
+      loadIscritti(
+          "https://docs.google.com/spreadsheets/d/e/2PACX-1vSx2MAUCgMesvDznHa6Ehdtgg6cnStrDk0GxEF4YzPCDhrbS2Z_ExwO5r2e4eUoGnzemKwFOqdYIslC/pub?gid=225215768&single=true&output=csv", "#iscritti"
+      );
+    </script>
 
     <script>
         const params = new URLSearchParams(window.location.search);
