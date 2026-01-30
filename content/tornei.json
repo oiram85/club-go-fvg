@@ -1,5 +1,12 @@
 {
     "tornei": [
+		{
+      "id": "torneo-2026-04",
+      "titolo": "Spiller Torneo",
+      "data": "2026-04-26",
+      "luogo": "RONCHI",
+      "url": "tornei/torneo.html?f=torneo-spiller"
+    },
 	{
       "id": "torneo-2025-12",
       "titolo": "14° Torneo di Udine",
