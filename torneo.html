@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Go FVG - Dettagli Torneo</title>
+    <link rel="stylesheet" href="style.css"> <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        #markdown-content { max-width: 800px; margin: 40px auto; padding: 20px; font-family: sans-serif; line-height: 1.6; }
+        img { max-width: 100%; height: auto; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f8f8f8; }
+        .error-msg { color: red; text-align: center; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div id="markdown-content">Caricamento in corso...</div>
+
+    <script>
+        // 1. Recupera il nome del file dall'URL (es: torneo.html?f=torneo2024)
+        const params = new URLSearchParams(window.location.search);
+        const fileName = params.get('f'); 
+
+        if (!fileName) {
+            document.getElementById('markdown-content').innerHTML = "<p class='error-msg'>Nessun torneo specificato.</p>";
+        } else {
+            // 2. Cerca il file .md nella cartella "tornei" (o dove preferisci)
+            fetch(`tornei/${fileName}.md`)
+                .then(response => {
+                    if (!response.ok) throw new Error();
+                    return response.text();
+                })
+                .then(text => {
+                    // 3. Converte e stampa
+                    document.getElementById('markdown-content').innerHTML = marked.parse(text);
+                    // Cambia il titolo della pagina con quello del torneo
+                    document.title = fileName.replace(/-/g, ' ') + " - Club Go FVG";
+                })
+                .catch(() => {
+                    document.getElementById('markdown-content').innerHTML = "<p class='error-msg'>Torneo non trovato o errore nel caricamento.</p>";
+                });
+        }
+    </script>
+</body>
+</html>
