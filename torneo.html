@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tornei - Higashikita Go FVG</title>
+    <title>Dettagli Torneo - Club Go FVG</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
@@ -12,7 +12,7 @@
       <div class="container header-inner">
         <div class="brand">
           <img src="assets/img/logoHiga.jpg" class="logo" alt="" />
-          <span id="page-subtitle">Torneo Spiller</span>
+          <span id="page-subtitle">Dettagli Torneo</span>
         </div>
         <nav class="nav">
           <a href="./tornei.html" class="btn btn-ghost small">← Tornei</a>
@@ -23,72 +23,87 @@
     <main class="container content">
       <section class="panel">
         <div class="split">
-          <div id="content" style="max-width: 800px;">
-            Caricamento in corso...
+          <div id="md-render" style="max-width: 800px; line-height: 1.6;">
+            Caricamento dettagli torneo...
           </div>
-          <div class="note muted small">
+
+          <div class="note muted small" style="min-width: 250px;">
             <p><strong>Nota privacy:</strong> i dati raccolti servono unicamente per la gestione del torneo.</p>
-            <p><strong>Privacy notice:</strong> data collected solely for tournament purposes.</p>
-            <p id="registration-container">
-               </p>
+            <div id="registration-container" style="margin-top: 20px;">
+               </div>
           </div>
         </div>
       </section>
 
       <section class="panel">
         <h2>Pre-iscritti</h2>
-        <div class="iscritti-grid" id="iscritti"></div>
+        <div class="iscritti-grid" id="iscritti">
+            <p>Caricamento lista...</p>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© 2026 Higashikita Go FVG</p>
-        <div class="social">
-          <a href="https://www.facebook.com/groups/612754198805804/" target="_blank"><img src="assets/img/facebook.svg" alt=""/></a>
-        </div>
+        <p>© 2026 Club Go FVG</p>
       </div>
     </footer>
 
     <script src="assets/js/sheet-loader.js"></script>
+
     <script>
       const params = new URLSearchParams(window.location.search);
-      const fileName = params.get('f');
+      let fileName = params.get('f');
 
       if (fileName) {
-        fetch(`tornei/${fileName}`)
-          .then(response => {
-            if (!response.ok) throw new Error("File non trovato");
-            return response.text();
+        fileName = fileName.replace('.md', '');
+        
+        fetch(`tornei/${fileName}.md`)
+          .then(res => {
+            if (!res.ok) throw new Error("File MD non trovato");
+            return res.text();
           })
           .then(text => {
+            // Dividiamo i metadati (Front Matter) dal testo
             const parts = text.split('---');
-            let mdContent = text;
+            let mdBody = text;
 
             if (parts.length >= 3) {
               const header = parts[1];
-              mdContent = parts.slice(2).join('---');
+              mdBody = parts.slice(2).join('---');
 
-              // 1. Estrazione Link CSV
-              const csvMatch = header.match(/csv_link:\s*"(.+?)"/);
-              if (csvMatch && typeof loadIscritti === 'function') {
-                loadIscritti(csvMatch[1], "#iscritti");
+              // Estraiamo i link con una Regex più flessibile
+              const titleMatch = header.match(/titolo_breve:\s*"(.*?)"/);
+              const csvMatch = header.match(/csv_link:\s*"(.*?)"/);
+              const formMatch = header.match(/form_link:\s*"(.*?)"/);
+
+              // 1. Applichiamo il Titolo
+              if (titleMatch) {
+                document.getElementById('page-subtitle').textContent = titleMatch[1];
+                document.title = titleMatch[1];
               }
 
-              // 2. Estrazione Link Form
-              const formMatch = header.match(/form_link:\s*"(.+?)"/);
-              if (formMatch) {
+              // 2. Carichiamo la lista iscritti (CSV)
+              if (csvMatch && csvMatch[1]) {
+                console.log("Carico CSV da:", csvMatch[1]);
+                if (typeof loadIscritti === 'function') {
+                    loadIscritti(csvMatch[1], "#iscritti");
+                }
+              }
+
+              // 3. Creiamo il bottone Form
+              if (formMatch && formMatch[1]) {
                 document.getElementById('registration-container').innerHTML = 
                   `<a class="btn btn-primary" href="${formMatch[1]}" target="_blank">Iscriviti / Register</a>`;
               }
             }
 
-            // 3. Rendering Markdown
-            document.getElementById('content').innerHTML = marked.parse(mdContent);
-            document.title = fileName.replace(/-/g, ' ') + " - Club Go FVG";
+            // Infine renderizziamo il Markdown nel div dedicato
+            document.getElementById('md-render').innerHTML = marked.parse(mdBody);
           })
           .catch(err => {
-            document.getElementById('content').innerHTML = `<h1>Errore</h1><p>Torneo non trovato.</p>`;
+            console.error(err);
+            document.getElementById('md-render').innerHTML = "Impossibile caricare i dettagli del torneo.";
           });
       }
     </script>
