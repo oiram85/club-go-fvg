@@ -1,4 +1,5 @@
 ---
+titolo_breve: "Torneo Spiller"
 csv_link: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSx2MAUCgMesvDznHa6Ehdtgg6cnStrDk0GxEF4YzPCDhrbS2Z_ExwO5r2e4eUoGnzemKwFOqdYIslC/pub?gid=225215768&single=true&output=csv"
 form_link: "https://docs.google.com/forms/d/e/1FAIpQLSfOYqsyAC21GwqDR0fo_cdeFjIxt1JLdDUR_MUKD2H-2UwfeA/viewform?usp=sf_link"
 ---
