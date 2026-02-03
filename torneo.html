@@ -58,7 +58,7 @@
       if (fileName) {
         fileName = fileName.replace('.md', '');
         
-        fetch(`tornei/${fileName}.md`)
+        fetch(`tornei/${fileName}`)
           .then(res => {
             if (!res.ok) throw new Error("File MD non trovato");
             return res.text();
