@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dettagli Torneo - Club Go FVG</title>
+    <title>Higashikita - Torneo</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
@@ -12,41 +12,29 @@
       <div class="container header-inner">
         <div class="brand">
           <img src="assets/img/logoHiga.jpg" class="logo" alt="" />
-          <span>Torneo Spiller</span>
+          <span id="page-subtitle">Torneo Spiller</span>
         </div>
         <nav class="nav">
           <a href="./tornei.html" class="btn btn-ghost small">← Tornei</a>
         </nav>
       </div>
     </header>
-<main class="container content">
+
+    <main class="container content">
       <section class="panel">
         <div class="split">
-    <div id="content" style="max-width: 800px;">
-        Caricamento in corso...
-    </div>
-    <div class="note muted small">
-            <p>
-              <strong>Nota privacy:</strong> i dati raccolti servono unicamente
-              per la gestione del torneo. Le email non saranno pubblicate.
-            </p>
-            <p>
-              <strong>Privacy notice:</strong> the data collected will be used
-              solely for the purpose of managing the tournament. Emails will not
-              be published.
-            </p>
-    <p>
-              <a
-                class="btn btn-primary"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfOYqsyAC21GwqDR0fo_cdeFjIxt1JLdDUR_MUKD2H-2UwfeA/viewform?usp=publish-editor"
-                target="_blank"
-                >Iscriviti / Register</a
-              >
-            </p>
+          <div id="content" style="max-width: 800px;">
+            Caricamento in corso...
           </div>
-              </div>
-
+          <div class="note muted small">
+            <p><strong>Nota privacy:</strong> i dati raccolti servono unicamente per la gestione del torneo.</p>
+            <p><strong>Privacy notice:</strong> data collected solely for tournament purposes.</p>
+            <p id="registration-container">
+               </p>
+          </div>
+        </div>
       </section>
+
       <section class="panel">
         <h2>Pre-iscritti</h2>
         <div class="iscritti-grid" id="iscritti"></div>
@@ -55,50 +43,54 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© 2026 Club Go FVG</p>
-
-
+        <p>© 2026 Higashikita Go FVG</p>
         <div class="social">
-          <a
-            href="https://www.facebook.com/groups/612754198805804/"
-            target="_blank"
-            aria-label="Facebook"
-            ><img src="assets/img/facebook.svg" alt=""
-          /></a>
+          <a href="https://www.facebook.com/groups/612754198805804/" target="_blank"><img src="assets/img/facebook.svg" alt=""/></a>
         </div>
       </div>
     </footer>
 
     <script src="assets/js/sheet-loader.js"></script>
     <script>
-      // Sostituisci con il tuo link CSV pubblico dello Sheet
-      loadIscritti(
-          "https://docs.google.com/spreadsheets/d/e/2PACX-1vSx2MAUCgMesvDznHa6Ehdtgg6cnStrDk0GxEF4YzPCDhrbS2Z_ExwO5r2e4eUoGnzemKwFOqdYIslC/pub?gid=225215768&single=true&output=csv", "#iscritti"
-      );
-    </script>
+      const params = new URLSearchParams(window.location.search);
+      const fileName = params.get('f');
 
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const fileName = params.get('f');
+      if (fileName) {
+        fetch(`tornei/${fileName}.md`)
+          .then(response => {
+            if (!response.ok) throw new Error("File non trovato");
+            return response.text();
+          })
+          .then(text => {
+            const parts = text.split('---');
+            let mdContent = text;
 
-        if (fileName) {
-            // Usiamo un percorso relativo che parte dalla root
-            // Assicurati che il file md sia dentro la cartella /tornei/
-            fetch(`tornei/${fileName}.md`)
-                .then(response => {
-                    if (!response.ok) throw new Error("File non trovato");
-                    return response.text();
-                })
-                .then(text => {
-                    document.getElementById('content').innerHTML = marked.parse(text);
-                    document.title = fileName.replace(/-/g, ' ') + " - Club Go FVG";
-                })
-                .catch(err => {
-                    document.getElementById('content').innerHTML = `<h1>Errore 404</h1><p>Il torneo <strong>${fileName}</strong> non è stato trovato nella cartella /tornei/.</p><a href="index.html">Torna alla Home</a>`;
-                });
-        } else {
-            document.getElementById('content').innerHTML = "Specificare un torneo nell'URL.";
-        }
+            if (parts.length >= 3) {
+              const header = parts[1];
+              mdContent = parts.slice(2).join('---');
+
+              // 1. Estrazione Link CSV
+              const csvMatch = header.match(/csv_link:\s*"(.+?)"/);
+              if (csvMatch && typeof loadIscritti === 'function') {
+                loadIscritti(csvMatch[1], "#iscritti");
+              }
+
+              // 2. Estrazione Link Form
+              const formMatch = header.match(/form_link:\s*"(.+?)"/);
+              if (formMatch) {
+                document.getElementById('registration-container').innerHTML = 
+                  `<a class="btn btn-primary" href="${formMatch[1]}" target="_blank">Iscriviti / Register</a>`;
+              }
+            }
+
+            // 3. Rendering Markdown
+            document.getElementById('content').innerHTML = marked.parse(mdContent);
+            document.title = fileName.replace(/-/g, ' ') + " - Club Go FVG";
+          })
+          .catch(err => {
+            document.getElementById('content').innerHTML = `<h1>Errore</h1><p>Torneo non trovato.</p>`;
+          });
+      }
     </script>
-</body>
+  </body>
 </html>
