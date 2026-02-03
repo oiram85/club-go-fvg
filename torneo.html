@@ -56,7 +56,7 @@
       const fileName = params.get('f');
 
       if (fileName) {
-        fetch(`./tornei/${fileName}.md`)
+        fetch(`tornei/${fileName}.md`)
           .then(response => {
             if (!response.ok) throw new Error("File non trovato");
             return response.text();
