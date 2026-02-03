@@ -57,7 +57,7 @@
 
       if (fileName) {
         const cleanName = fileName.replace('.md', '').trim();
-        const filePath = `${cleanName}.md`;
+        const filePath = `tornei/${cleanName}.md`;
 
         console.log("Tentativo di caricamento:", filePath);
         fetch(`${filePath}`)
