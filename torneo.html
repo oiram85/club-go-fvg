@@ -56,9 +56,11 @@
       let fileName = params.get('f');
 
       if (fileName) {
-        //fileName = fileName.replace('.md', '');
-        
-        fetch(`tornei/${fileName}`)
+        const cleanName = fileName.replace('.md', '').trim();
+        const filePath = `tornei/${cleanName}.md`;
+
+        console.log("Tentativo di caricamento:", filePath);
+        fetch(`tornei/${filePath}`)
           .then(res => {
             if (!res.ok) throw new Error("File MD non trovato");
             return res.text();
