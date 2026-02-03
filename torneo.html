@@ -56,7 +56,7 @@
       let fileName = params.get('f');
 
       if (fileName) {
-        fileName = fileName.replace('.md', '');
+        //fileName = fileName.replace('.md', '');
         
         fetch(`tornei/${fileName}`)
           .then(res => {
