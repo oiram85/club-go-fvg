@@ -1,6 +1,13 @@
 {
     "tornei": [
 		{
+      "id": "torneo-2026-11",
+      "titolo": "Udine Torneo",
+      "data": "2026-11-26",
+      "luogo": "Udine",
+      "url": "torneo.html?f=torneo-udine"
+    },
+	{
       "id": "torneo-2026-04",
       "titolo": "Spiller Torneo",
       "data": "2026-04-26",
